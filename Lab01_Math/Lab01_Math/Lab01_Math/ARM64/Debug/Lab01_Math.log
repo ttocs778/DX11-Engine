@@ -1,0 +1,9 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmmintrin.h(27,1): error C1189: #error:  This header is specific to X86, X64, ARM64, and ARM64EC targets
+  (compiling source file '../Source/main.cpp')
+  
+  stdafx.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\xmmintrin.h(27,1): error C1189: #error:  This header is specific to X86, X64, ARM64, and ARM64EC targets
+  (compiling source file '../Source/stdafx.cpp')
+  
+  Generating Code...
