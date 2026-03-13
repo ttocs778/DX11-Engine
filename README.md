@@ -1,6 +1,3 @@
-# ITP 485 Spring 2025 #
+# DX11 Game Engine Prototype #
 
-### EDIT BELOW ###
-Name: Scott Tang
 
-Email: ruit@usc.edu
