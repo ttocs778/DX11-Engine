@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CollisionBox.h"
 #include "RenderObj.h"
-#include "../Lab08_Collisions/Source/game.h"
+#include "../Source/game.h"
 CollisionBox::CollisionBox(RenderObj* pObj, Physics* pPhysics) : Component(pObj), mPhysics(pPhysics)
 {
 	mPhysics->AddObj(this);

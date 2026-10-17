@@ -3,3 +3,12 @@ x64
 *.user
 profile.json
 profile.txt
+ARM64
+Debug
+Release
+*.pdb
+*.idb
+*.ilk
+*.obj
+*.tlog
+*.log

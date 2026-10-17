@@ -1,6 +1,6 @@
 #pragma once
 #include "Component.h"               
-#include "../Lab09_Jobs/Source/game.h"              
+#include "../game.h"              
 #include "jsonUtil.h"
 #include "SkinnedObj.h"
 #include "Skeleton.h"
