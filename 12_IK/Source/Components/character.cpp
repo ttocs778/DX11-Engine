@@ -5,6 +5,7 @@
 #include "RenderObj.h"
 #include "SkinnedObj.h"
 #include "stringUtil.h"
+#define SKELETON_DEBUG_DRAW 0
 
 
 Character::Character(SkinnedObj* renderObj)
@@ -78,6 +79,20 @@ void Character::UpdateAnim(float deltaTime)
         // convert boneTransforms to model pose matrix
         std::vector<Matrix4> outPoses;
         Animation::BonesToGlobalPose(bones, outPoses, mSkeleton);
+
+#if SKELETON_DEBUG_DRAW
+        // draw a line from every bone to its parent, in world space
+        Matrix4 charWorld = mOwner->mConstants.c_modelToWorld;
+        for (size_t i = 0; i < mSkeleton->GetNumBones(); ++i)
+        {
+            int parent = mSkeleton->GetBone(i).mParent;
+            if (parent < 0)
+                continue;
+            Vector3 bonePos = (outPoses[i] * charWorld).GetTranslation();
+            Vector3 parentPos = (outPoses[parent] * charWorld).GetTranslation();
+            Graphics::Get()->Debug_Line(bonePos, parentPos, Graphics::Color4(1.0f, 1.0f, 0.0f, 1.0f));
+        }
+#endif
 
         // combine with inv bind boses
         const std::vector<Matrix4>& invBind = mSkeleton->GetGlobalInvBindPoses();

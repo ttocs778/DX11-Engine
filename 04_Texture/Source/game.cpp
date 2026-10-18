@@ -71,7 +71,7 @@ void Game::Shutdown()
 void Game::Update(float deltaTime)
 {
 	static float rotationVariable = 1.0;
-	//rotationVariable += Math::Pi * deltaTime;
+	rotationVariable += Math::Pi * deltaTime;
 	Matrix4 scaleMatrix = Matrix4::CreateScale(300.0f);
 	Matrix4 rotationMatrix = Matrix4::CreateRotationZ(rotationVariable);
 	Matrix4 modelToWorld = scaleMatrix * rotationMatrix;
